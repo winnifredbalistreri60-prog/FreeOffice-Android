@@ -1,0 +1,4 @@
+[target.aarch64-linux-android]
+linker = "/workspace/android-sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android23-clang"
+[target.x86_64-linux-android]
+linker = "/workspace/android-sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/linux-x86_64/bin/x86_64-linux-android23-clang"

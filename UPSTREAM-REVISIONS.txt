@@ -1,0 +1,6 @@
+WordCraft https://github.com/storytold/wordcraft
+f2e15cf8f899a79899a2d9595ca4ce7df1e5ea22
+GridCraft https://github.com/storytold/gridcraft
+c30fa3f1cf324603f3bfc0171689b1d4083b40e5
+PdfCraft https://github.com/storytold/pdfcraft
+d8b27058252da24a08df8ff06c23418ac4fb97a1

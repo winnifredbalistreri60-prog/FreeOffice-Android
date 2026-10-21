@@ -1,0 +1,30 @@
+plugins { id 'com.android.application' }
+android {
+ namespace 'ru.freeoffice.app'
+ compileSdk 35
+ defaultConfig {
+  // Deliberately unique test-only identity: never targets the known 0.2.3 or ambiguous .autofit install.
+  applicationId 'ru.freeoffice.app.candidate026'
+  minSdk 26; targetSdk 35; versionCode 10; versionName '0.2.6-structured-alpha1'
+  testInstrumentationRunner 'android.test.InstrumentationTestRunner'
+  manifestPlaceholders = [appLabel: 'FreeOffice 0.2.6 candidate']
+ }
+ signingConfigs {
+  preservedDebug {
+   def keyPath = System.getenv('FREEOFFICE_DEBUG_KEYSTORE')
+   if (keyPath != null) storeFile file(keyPath)
+   storePassword 'android'; keyAlias 'androiddebugkey'; keyPassword 'android'
+  }
+ }
+ buildTypes {
+  debug { signingConfig signingConfigs.preservedDebug }
+  release { minifyEnabled false; signingConfig signingConfigs.preservedDebug; debuggable false }
+ }
+ compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+ lint { abortOnError true }
+}
+tasks.configureEach { t ->
+ if (t.name.startsWith('validateSigning')) t.doFirst {
+  if (!System.getenv('FREEOFFICE_DEBUG_KEYSTORE')) throw new GradleException('Set FREEOFFICE_DEBUG_KEYSTORE to the preserved local debug key; never auto-generate a replacement.')
+ }
+}
