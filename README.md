@@ -4,6 +4,12 @@
 
 The reference is the reviewer's **0.2.5-autofit-alpha2**, not the earlier 0.2.3 release. Its source was reconstructed with the exact 0.2.4 → 0.2.5 reviewer patches; the reference APK SHA-256 is `00f8eda3261040601741de029c75146eb3722ffb94dd6c5fbdcdbda9840a51d7`. This candidate integrates the separately completed DOCX and PDF source patches, plus the retained spreadsheet/menu/CSV work. The historical 0.2.3 source, APK and source archive must remain untouched.
 
+## Visual preview
+
+![FreeOffice Android architecture preview](docs/preview.png)
+
+The diagram shows the Android UI and its DOCX, spreadsheet/CSV and PDF paths backed by the WordCraft, GridCraft and PdfCraft native components.
+
 ## Identity and safety
 
 - Application ID: `ru.freeoffice.app.candidate026` — intentionally separate from the main app and any `.autofit` package.
